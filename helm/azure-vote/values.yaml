@@ -1,0 +1,8 @@
+# Redis settings
+redis:
+  image: redis:6.0
+
+# Voting app settings
+votingApp:
+  image: devopsacrivank.azurecr.io/azure-vote:2
+  replicas: 1
