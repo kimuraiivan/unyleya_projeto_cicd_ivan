@@ -38,6 +38,6 @@ stages:
         azureResourceGroupForACR: 'devops-rg'
         azureContainerRegistry: 'devopsacrivank.azurecr.io'
         command: 'package'
-        chartPath: 'helm'
+        chartPath: 'helm/azure-vote'
         chartNameForACR: 'azure-vote'
         chartPathForACR: 'chart'
