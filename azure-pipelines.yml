@@ -32,3 +32,12 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: HelmDeploy@1
+      inputs:
+        azureSubscriptionForACR: 'Azure subscription 1 (f43b6291-a5e7-4469-ab79-653a0495f1fb)'
+        azureResourceGroupForACR: 'devops-rg'
+        azureContainerRegistry: 'devopsacrivank.azurecr.io'
+        command: 'package'
+        chartPath: 'helm'
+        chartNameForACR: 'azure-vote'
+        chartPathForACR: 'chart'
