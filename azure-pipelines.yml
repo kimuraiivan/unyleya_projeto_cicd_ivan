@@ -40,4 +40,4 @@ stages:
         command: 'package'
         chartPath: 'helm/azure-vote'
         chartNameForACR: 'azure-vote'
-        chartPathForACR: 'chart'
+        chartPathForACR: 'helm/azure-vote'
