@@ -10,6 +10,9 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
+  dockerRegistryServiceConnection: 'a003031d-a6f8-4202-9bcb-35aefbabc405'
+  imageRepository: 'azure-vote'
+  containerRegistry: 'devopsacrivank.azurecr.io'
 
 stages:
 - stage: Build
@@ -23,7 +26,9 @@ stages:
     - task: Docker@2
       displayName: Build an image
       inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
+        command: buildAndPush
+        repository: $(imageRepository)
+        Dockerfile: '$(Build.SourcesDirectory)/azure-vote/Dockerfile'
+        containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
