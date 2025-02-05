@@ -41,21 +41,6 @@ stages:
         chartPath: 'helm/azure-vote'
         chartNameForACR: 'azure-vote'
         chartPathForACR: 'helm/azure-vote'
-    - script: |
-        pwd
-        ls -al
-        tree
-    - task: HelmDeploy@1
-      inputs:
-        connectionType: 'Azure Resource Manager'
-        azureSubscription: 'Azure subscription 1 (f43b6291-a5e7-4469-ab79-653a0495f1fb)'
-        azureResourceGroup: 'devops-rg'
-        kubernetesCluster: 'devops-aks-cluster'
-        namespace: 'default'
-        command: 'upgrade'
-        chartType: 'FilePath'
-        chartPath: 'helm/azure-vote'
-        releaseName: 'azure-vote'
     - task: PublishBuildArtifacts@1    
       displayName: 'Publish Artifact: drop'
       inputs:
