@@ -8,4 +8,4 @@ votingApp:
   name: azure-vote
   image: "{{ .Values.votingApp.repository }}/{{ .Values.votingApp.name }}:{{.Values.votingApp.tag |  default .Chart.AppVersion}}"
   replicas: 1
-  tag: 1
+  tag: "v1"
