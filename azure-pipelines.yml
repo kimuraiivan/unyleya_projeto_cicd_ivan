@@ -53,5 +53,6 @@ stages:
         kubernetesCluster: 'devops-aks-cluster'
         namespace: 'default'
         command: 'upgrade'
-        chartType: 'Name'
-        chartName: 'azure-vote'
+        chartType: 'FilePath'
+        chartPath: 'helm/azure-vote'
+        releaseName: 'azure-vote'
