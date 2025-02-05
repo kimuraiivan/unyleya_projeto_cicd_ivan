@@ -41,6 +41,10 @@ stages:
         chartPath: 'helm/azure-vote'
         chartNameForACR: 'azure-vote'
         chartPathForACR: 'helm/azure-vote'
+    - script: |
+        pwd
+        ls -al
+        tree
     - task: HelmDeploy@1
       inputs:
         connectionType: 'Azure Resource Manager'
