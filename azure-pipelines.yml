@@ -56,3 +56,7 @@ stages:
         chartType: 'FilePath'
         chartPath: 'helm/azure-vote'
         releaseName: 'azure-vote'
+    - task: PublishBuildArtifacts@1    
+      displayName: 'Publish Artifact: drop'
+      inputs:
+        PathtoPublish: '$(build.artifactstagingdirectory)'
