@@ -4,5 +4,8 @@ redis:
 
 # Voting app settings
 votingApp:
-  image: devopsacrivank.azurecr.io/azure-vote:2
+  repository: devopsacrivank.azurecr.io
+  name: azure-vote
+  image: "{{ .Values.votingApp.repository }}/{{ .Values.votingApp.name }}:{{.Values.votingApp.tag |  default .Chart.AppVersion}}"
   replicas: 1
+  tag: 1

@@ -51,7 +51,7 @@ spec:
         "beta.kubernetes.io/os": linux
       containers:
       - name: azure-vote-front
-        image: {{ .Values.votingApp.image }}
+        image: "{{ .Values.votingApp.repository }}/{{ .Values.votingApp.name }}:{{.Values.votingApp.tag |  default .Chart.AppVersion}}"
         ports:
         - containerPort: 80
         resources:
