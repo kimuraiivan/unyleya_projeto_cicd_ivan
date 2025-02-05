@@ -49,6 +49,5 @@ stages:
         kubernetesCluster: 'devops-aks-cluster'
         namespace: 'default'
         command: 'upgrade'
-        chartType: 'FilePath'
-        chartPath: 'azure-vote-0.1.0.tgz'
-        chartVersion: '1.16.0'
+        chartType: 'Name'
+        chartName: 'azure-vote'
